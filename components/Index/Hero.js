@@ -21,7 +21,7 @@ const Hero = () => {
             >
                 Book your next appointment now
             </Link>
-            <Accordion type="multiple" collapsible className='w-full max-w-full overflow-hidden'>
+            <Accordion type="multiple" collapsible = "true" className='w-full max-w-full overflow-hidden'>
               <AccordionItem value="item-1">
                 <AccordionTrigger className = "text-lg">When are we open?</AccordionTrigger>
                 <AccordionContent>
