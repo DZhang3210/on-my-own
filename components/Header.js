@@ -4,6 +4,7 @@ import React from 'react'
 import { signIn, signOut } from 'next-auth/react'
 import { Fish } from 'lucide-react'
 import Link from 'next/link'
+import { Avatar } from 'flowbite-react'
 
 const Header = ({session}) => {
   const firstName = session?.user.name.split(' ')[0]
@@ -16,9 +17,9 @@ const Header = ({session}) => {
             <div className=''>
                 <Link
                     href = "/" 
-                    className='flex'
+                    className='flex text-xl items-center gap-1'
                     >
-                    <Fish/>
+                    <Fish size = {40}/>
                     Seafood Select: By Appointment Only
                 </Link>
             </div>
@@ -33,8 +34,13 @@ const Header = ({session}) => {
 
             {session && 
                 <div className='flex items-center gap-2'>
-                    <div>
-                        Hello {firstName}
+                    <div className='flex items-center gap-2'>
+                        <span className='text-lg font-semibold'>Hello {firstName}</span>
+                        <Link
+                            href = "/profile"
+                        >
+                            <Avatar img = {session.user.image} rounded/>
+                        </Link>
                     </div>
                     <button
                         type = "button"
