@@ -8,6 +8,7 @@ Pages:
         - Link to signing in
     -Home
         - Hero
+        - Testimonials
         - Carousel of Menu Items
         - Menu Look (Link to menus)
         - Appointments (Link to appointment)
