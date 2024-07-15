@@ -1,5 +1,10 @@
 import flowbite from "flowbite-react/tailwind";
+const {
+  default: flattenColorPalette,
+} = require("tailwindcss/lib/util/flattenColorPalette");
+
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   darkMode: ["class"],
   content: [
@@ -77,5 +82,17 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate"),flowbite.plugin(),],
+  plugins: [require("tailwindcss-animate"),flowbite.plugin(),addVariablesForColors],
+}
+
+// This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).
+function addVariablesForColors({ addBase, theme }) {
+  let allColors = flattenColorPalette(theme("colors"));
+  let newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  );
+ 
+  addBase({
+    ":root": newVars,
+  });
 }

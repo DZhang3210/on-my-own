@@ -9,7 +9,7 @@ Pages:
     -Home
         - Hero
         - Testimonials
-        - Carousel of Menu Items
+        - Carousel of Reviews
         - Menu Look (Link to menus)
         - Appointments (Link to appointment)
             - "Book your appointment"
