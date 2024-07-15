@@ -8,10 +8,10 @@ import { saveAppointment } from './booking/bookingActions';
 
 const BookingForm = () => {
   const [date, setDate] = useState(new Date())
-//   const handleFormSubmit = async (formData) => {
-//     // formData.preventDefault()
-//     console.log(Object.fromEntries(formData))
-//   }
+  const handleFormSubmit = async (formData) => {
+    // formData.preventDefault()
+    console.log(Object.fromEntries(formData))
+  }
   return (
     <form 
         action = {(formData)=> saveAppointment(formData)}
@@ -29,11 +29,11 @@ const BookingForm = () => {
             </label>
             <label>
                 <div className='font-semibold'>Size:</div>
-                <input type = "number" name = "email" placeholder='Size...' required/> 
+                <input type = "number" name = "size" placeholder='Size...' required/> 
             </label>
             <label>
                 <div className='font-semibold'>Description:</div>
-                <textarea type = "text" name = "desc" required/> 
+                <textarea type = "text" name = "description" required/> 
             </label>
             
         </div>
@@ -48,7 +48,7 @@ const BookingForm = () => {
                 <div>
                     Which Locations?
                 </div>
-                <RadioGroup defaultValue="maine">
+                <RadioGroup defaultValue="maine" name = "location">
                     <div className="flex items-center space-x-2">
                         <RadioGroupItem value="maine" id="option-one" />
                         <Label htmlFor="option-one">Seaside Harbor, Maine</Label>
@@ -71,6 +71,7 @@ const BookingForm = () => {
         Submit
       </button>
       <input className='hidden' name = "date" value = {date} readOnly/>
+      <input className='hidden' name = "email" value = {"davidzhang3210@gmail.com"} readOnly/>
     </form>
   )
 }
