@@ -3,6 +3,7 @@
 
 import { Carousel } from "flowbite-react";
 import CarouselCard from "./CarouselCard";
+import CarouselButton from "./CarouselButton";
 
 export default function Component() {
   const reviews = [
@@ -11,9 +12,13 @@ export default function Component() {
     ["review3", "Ocean's Bounty Seafood is a must-visit for anyone who appreciates high-quality seafood. The combination of fresh ingredients, skilled preparation, and excellent service makes it a standout choice. Whether you're celebrating a special occasion or simply craving some good seafood, this place is sure to impress."],
 
   ]
+  
   return (
     <div className="h-[30rem]">
-      <Carousel slideInterval={2000}>
+      <Carousel slideInterval={2000} 
+        leftControl= {<CarouselButton side = "left"/>}
+        rightControl= {<CarouselButton side = "right"/>}
+      >
         {reviews.map((review, i) => (
           <CarouselCard key = {i} rTitle = {review[0]} rDesc = {review[1]}/>
         ))}
