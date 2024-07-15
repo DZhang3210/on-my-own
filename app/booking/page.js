@@ -1,7 +1,9 @@
 import BookingForm from '@/components/BookingForm'
+import { Appointment } from '@/models/Appointment'
+import mongoose from 'mongoose'
 import React from 'react'
 
-const Booking = () => {
+const Booking = async () => {
   return (
     <div className='max-w-4xl mx-auto'>
         <BookingForm/>

@@ -1,4 +1,4 @@
-const { default: mongoose } = require("mongoose");
+const { default: mongoose, Schema, model, models } = require("mongoose");
 
 const appointmentSchema = new Schema({
     name: {type:String, required: true},
@@ -6,8 +6,8 @@ const appointmentSchema = new Schema({
     email: {type:String, required: true},
     size: {type: Number, required: true},
     location: {type:String, required: true},
-    time: {type:String, required: true},
+    description: {type:String, required: true},
     date: {type: Date, required: true},
 }, {timestamps: true});
 
-export const AppointmentMode = models?.Appointment || model('Appointment', appointmentSchema);
+export const Appointment = models?.Appointment || model('Appointment', appointmentSchema);
