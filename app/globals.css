@@ -67,3 +67,7 @@
     @apply bg-background text-foreground;
   }
 }
+
+.profile-btn{
+    @apply p-4 rounded-full bg-blue-400
+}

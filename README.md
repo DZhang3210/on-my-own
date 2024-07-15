@@ -14,6 +14,7 @@ Pages:
         - Appointments (Link to appointment)
             - "Book your appointment"
             - Responsive Calender Props i
+        -Q&A
         - Footer
     -Menu
         -(Fade In) Menu

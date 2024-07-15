@@ -1,10 +1,10 @@
 import React from 'react'
-import Carousel from './Carousel'
+import CarouselComponent from './CarouselComponent'
 
 const Testimonials = () => {
   return (
     <div>
-      <Carousel/>
+      <CarouselComponent/>
     </div>
   )
 }

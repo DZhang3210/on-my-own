@@ -8,7 +8,7 @@ import Link from 'next/link'
 const Header = ({session}) => {
   const firstName = session?.user.name.split(' ')[0]
   return (
-    <div className='bg-white w-full py-7 sticky top-0 z-100'>
+    <div className='bg-white w-full py-7 sticky top-0 z-[1000]'>
         <div className='max-w-4xl px-auto flex justify-between mx-auto items-center'>
             {/* <pre>
                 {JSON.stringify(session)}
