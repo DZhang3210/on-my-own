@@ -1,10 +1,13 @@
 'use client'
 import React, { useState } from 'react'
 import { Calendar } from './ui/calendar'
-import { Datepicker } from "flowbite-react";
+import TimePicker from 'react-time-picker';
+import { Label } from "@/components/ui/label"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 
 const BookingForm = () => {
   const [date, setDate] = useState(new Date())
+  const [value, onChange] = useState('10:00');
   return (
     <form className='flex justify-around'>
       <div>
@@ -20,6 +23,20 @@ const BookingForm = () => {
             <div className='font-semibold'>Title:</div>
             <input type = "text" name = "title"/> 
         </label>
+        <label>
+            <div className='font-semibold'>Size:</div>
+            <input type = "Number" name = "size"/> 
+        </label>
+        <RadioGroup defaultValue="option-one">
+            <div className="flex items-center space-x-2">
+                <RadioGroupItem value="option-one" id="option-one" />
+                <Label htmlFor="option-one">Option One</Label>
+            </div>
+            <div className="flex items-center space-x-2">
+                <RadioGroupItem value="option-two" id="option-two" />
+                <Label htmlFor="option-two">Option Two</Label>
+            </div>
+        </RadioGroup>
       </div>
       <div className='flex flex-col gap-3'>
         <Calendar
@@ -28,7 +45,9 @@ const BookingForm = () => {
             onSelect={setDate}
             className="rounded-md border"
         />
-        <Datepicker title="Appointment Date"/>
+        {/* <div>
+            <TimePicker onChange={onChange} value={value} clearIcon = "" clockIcon=""/>
+        </div> */}
       </div>
       
     </form>
