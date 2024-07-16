@@ -50,7 +50,7 @@ const Hero = () => {
 
         </div>
 
-      {/* <Image src = {'/mesh-gradient.png'} alt= "hero-mesh" height = {0} width = {0} className='absolute top-0 left-0 w-full h-full z-[-1]'/> */}
+      {/* <Image src = {'/ocean-beach-horizon.jpg'} alt= "hero-mesh" height = {0} width = {0} className='absolute top-0 left-0 w-full h-full z-'/> */}
     </section>
   )
 }

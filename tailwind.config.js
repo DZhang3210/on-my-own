@@ -42,6 +42,9 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       colors: {
+        crab: "#EE905A",
+        sand: "#F6ECAB",
+        ocean:  "#5B9FB6",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

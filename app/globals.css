@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -82,4 +83,8 @@ input[type=number] {
 
 .profile-btn{
     @apply px-4 py-2 rounded-full hover:scale-105 transition
+}
+
+*{
+  box-sizing: border-box;
 }

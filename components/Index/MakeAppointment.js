@@ -3,7 +3,7 @@ import { AnimatedPinDemo } from '../AnimatedPin'
 
 const MakeAppointment = () => {
   return (
-    <div className='flex flex-col md:flex-row gap-3 justify-center items-center my-10 mx-5'> 
+    <div className='flex flex-col md:flex-row gap-3 justify-center items-center py-20 px-5 '> 
       <div className='flex flex-col text-center gap-2 justify-center items-center max-w-sm'>
         <h1
             className='text-2xl font-semibold capitalize'
