@@ -15,7 +15,7 @@ const BookingForm = () => {
   return (
     <form 
         action = {(formData)=> saveAppointment(formData)}
-        className='flex flex-col justify-center items-center gap-3'
+        className='flex flex-col justify-center items-center gap-3 mt-10'
     >
       <div className='flex flex-col sm:flex-row justify-around gap-10'>
         <div className='flex flex-col gap-3'>
@@ -66,7 +66,7 @@ const BookingForm = () => {
         </div>
       </div>
       <button
-        className='inline-block rounded-lg bg-blue-400 px-20 py-2'
+        className='inline-block rounded-lg bg-blue-400 px-20 py-2 transition hover:scale-105'
       >
         Submit
       </button>

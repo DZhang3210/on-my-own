@@ -5,7 +5,7 @@ import React from 'react'
 
 const Booking = async () => {
   return (
-    <div className='max-w-4xl mx-auto'>
+    <div className='mx-auto'>
         <BookingForm/>
     </div>
   )

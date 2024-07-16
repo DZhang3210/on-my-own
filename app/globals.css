@@ -81,5 +81,5 @@ input[type=number] {
 }
 
 .profile-btn{
-    @apply p-4 rounded-full bg-blue-400
+    @apply px-4 py-2 rounded-full hover:scale-105 transition
 }

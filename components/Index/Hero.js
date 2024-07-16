@@ -10,8 +10,8 @@ import Link from 'next/link'
 
 const Hero = () => {
   return (
-    <section className='w-full h-[90vh] relative flex justify-center text-center'>
-        <div className='z-10 mt-32 flex flex-col gap-3 w-[400px] max-w-sm'>
+    <section className='w-full h-[80vh] relative flex justify-center text-center'>
+        <div className='z-10 mt-32 flex flex-col gap-3 w-[400px] max-w-sm px-4'>
             <span className='text-5xl'>Seafood Select</span> 
             <span className='text-3xl'>Your next Stravaganza</span>
             <p>We do delivery and appointments only</p>
