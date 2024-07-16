@@ -85,6 +85,6 @@ input[type=number] {
     @apply px-4 py-2 rounded-full hover:scale-105 transition
 }
 
-*{
+*,body{
   box-sizing: border-box;
 }
