@@ -1,8 +1,8 @@
 import { PersonStanding } from 'lucide-react';
 import Image from 'next/image'
 import React from 'react'
-import AppointmentList from './AppointmentList';
-import DisplayRemainingSessions from './DisplayRemainingSessions';
+import AppointmentList from './profile/AppointmentList';
+import DisplayRemainingSessions from './profile/DisplayRemainingSessions';
 
 const ProfilePage = ({session, apps}) => {
   return (
