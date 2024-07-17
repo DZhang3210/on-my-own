@@ -1,4 +1,4 @@
-import ProfilePage from '@/components/profile/ProfilePage'
+import ProfilePage from '@/components/profile/profilePage'
 import { authOptions } from '@/lib/authOptions'
 import { Appointment } from '@/models/Appointment'
 import mongoose from 'mongoose'
