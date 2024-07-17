@@ -5,12 +5,13 @@ import { signIn, signOut } from 'next-auth/react'
 import { Fish, LogIn, LogOut } from 'lucide-react'
 import Link from 'next/link'
 import { Avatar } from 'flowbite-react'
+import Image from 'next/image'
 
 const Header = ({session}) => {
   const firstName = session?.user.name.split(' ')[0]
   const [dropDown, setDropdown] = useState(false)
   return (
-    <div className='bg-ocean/40 w-full py-7 sticky top-0 z-[1000] shadow'>
+    <div className='bg-ocean/40 w-full py-7 sticky top-0 z-[1000] shadow px-5'>
         <div className='max-w-4xl px-auto flex justify-between mx-auto items-center'>
             {/* <pre>
                 {JSON.stringify(session)}
@@ -42,19 +43,31 @@ const Header = ({session}) => {
                         className='profile-btn bg-black border-black text-white hover:bg-white hover:text-black hover:border text-center'>
                         Book Appointment
                     </Link> */}
-                    <div className='relative flex items-center gap-2 w-40 justify-end'>
+                    <div className='relative flex items-center gap-2 h-[5rem] justify-end'>
                         <button
                             href = "/profile"
                             onClick = {()=>setDropdown(dropdown => !dropdown)}
+                            className='flex items-center gap-2'
                         >
-                            <Avatar img = {session.user.image} rounded
-                            className={'rounded-full'+' '+(dropDown? 'border-2 border-green-400 box-border':'')}
-                            />
+                            <div className='text-xl whitespace-nowrap'>
+                                <span className='hidden md:inline-block'>Welcome</span>
+                                &nbsp; 
+                                <span className='italic'>{session?.user?.name}</span>
+                            </div>
+                                <Image
+                                    src = {session.user.image} 
+                                    alt = "avatar"
+                                    height = {40}
+                                    width = {40}
+                                    className={'rounded-full'+' '+(dropDown? 'border-2 border-green-400 box-border':'')}
+                                />
                         </button>
-                        {dropDown && <div className={'absolute top-full right-0 w-full bg-white flex flex-col items-end gap-1 rounded-lg border border-gray-400'}>
-                            <div>Book Appointment</div>
-                            <div>Profile</div>
-                            <div>SignOut</div>
+                        {dropDown && <div className={'absolute top-full right-0 w-full bg-white flex flex-col items-end gap-2 rounded-lg border border-gray-400 p-4 text-end'}>
+                            <Link href = "/booking" className='hover:underline'>Book Appointment</Link>
+                            <hr className='w-full'/>
+                            <Link href = "/profile" className='hover:underline'>Profile</Link>
+                            <hr className='w-full'/>
+                            <button onClick = {signOut} className='hover:underline'>SignOut</button>
                         </div>}
                     </div>
                     {/* <button

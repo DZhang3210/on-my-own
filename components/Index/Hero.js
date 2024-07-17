@@ -1,3 +1,4 @@
+'use client'
 import Image from 'next/image'
 import React from 'react'
 import {
@@ -7,21 +8,52 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 
+const fadeIn = {
+  initial: {
+    y:-30,
+    opacity:0
+  },
+  animate: {
+    x:0,
+    opacity:100,
+    transition: {
+      delay:0,
+      duration:0.5
+    }
+  }
+}
 const Hero = () => {
   return (
-    <section className='w-full h-[80vh] relative flex justify-center text-center'>
+    <section className='w-full h-[100vh] relative flex justify-center text-center'>
+        <div className="absolute left-0 top-0 h-full w-[5rem] bg-red-400/20 z-[-1]"/>
         <div className='z-10 mt-32 flex flex-col gap-3 w-[400px] max-w-sm px-4'>
-            <span className='text-5xl'>Seafood Select</span> 
-            <span className='text-3xl'>Your next Stravaganza</span>
-            <p>We do delivery and appointments only</p>
-            <Link 
+            <motion.span
+              variants = {fadeIn}
+              initial = "initial"
+              animate = "animate"
+            >
+              <span className='text-6xl font-bold text-blue-500'>Seafood Select</span> 
+              <br/>
+              <span className='text-3xl font-semibold text-blue-400'>Your next Stravaganza</span>
+              <p className='text-xl text-blue-300'>We do delivery and appointments only</p>
+            </motion.span>
+            <motion.a 
+              variants = {fadeIn}
+              initial = "initial"
+              animate = "animate"
               href = "/booking"
-              className=' rounded-full bg-black text-white p-4 mt-6 w-full'
+              className=' rounded-full bg-black text-white p-4 mt-6 w-full text-lg text-semibold'
             >
                 Book your next appointment now
-            </Link>
-            <Accordion type="multiple" collapsible = "true" className='w-full max-w-full overflow-hidden'>
+            </motion.a>
+            <motion.div
+              variants = {fadeIn}
+              initial = "initial"
+              animate = "animate"
+            >
+            <Accordion type="multiple" collapsible = "true" className='w-full max-w-full overflow-hidden text-blue-300 bg-gray-600/80 p-4'>
               <AccordionItem value="item-1">
                 <AccordionTrigger className = "text-lg">When are we open?</AccordionTrigger>
                 <AccordionContent>
@@ -31,7 +63,7 @@ const Hero = () => {
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-2">
-                <AccordionTrigger className = "text-lg">How many people do we accomodate?</AccordionTrigger>
+                <AccordionTrigger className = "text-lg text-start">How many people do we accomodate?</AccordionTrigger>
                 <AccordionContent>
                   <div className='text-md'>
                     If given one month notice, we can accomodate up to 300 people, but on short notice about 90 people max
@@ -47,10 +79,18 @@ const Hero = () => {
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
+            </motion.div>
 
         </div>
 
-      {/* <Image src = {'/ocean-beach-horizon.jpg'} alt= "hero-mesh" height = {0} width = {0} className='absolute top-0 left-0 w-full h-full z-'/> */}
+      <Image 
+        src = {'/ocean-beach-horizon.jpg'} 
+        alt= "hero-mesh" 
+        layout='fill'
+        height = {0} 
+        width = {0} 
+        className='absolute top-0 left-0 w-full h-full fade-gradient'
+      />
     </section>
   )
 }

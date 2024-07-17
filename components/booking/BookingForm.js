@@ -31,15 +31,16 @@ const BookingForm = () => {
           saveAppointment(formData)
           setOpen(false)
         }}
-        className='flex flex-col justify-center items-center gap-3 mb-10'
+        className='relative flex flex-col justify-center items-center gap-3 pb-10'
     >
+      <div className="absolute left-0 top-0 h-full w-[5rem] bg-red-400/20 z-[-1]"/>
       <div className='flex flex-col justify-center items-center gap-3 mt-10 rounded-md bg-slate-200/50 p-10'>
         <div className='w-full text-2xl font-semibold'>
           Make your Appointment
         </div>
-        <div className='flex flex-col sm:flex-row justify-around gap-20 mt-4'>
-          <div className='flex flex-col gap-3'>
-              <label>
+        <div className='flex flex-col sm:flex-row justify-center gap-5 mt-4'>
+          <div className='flex flex-col gap-3 grow'>
+              <label className='w-[20rem] xs:w-full'>
                   <div className='font-semibold'>Title:</div>
                   <input type = "text" name = "title" placeholder='your incredible title...' className='rounded-md w-full' required/> 
               </label>

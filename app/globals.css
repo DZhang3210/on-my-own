@@ -88,3 +88,12 @@ input[type=number] {
 *,body{
   box-sizing: border-box;
 }
+
+.fade-gradient {
+  mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+}
+
+body{
+  @apply bg-sand/50
+}
