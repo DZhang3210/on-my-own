@@ -7,8 +7,8 @@ export const authOptions = {
     adapter: MongoDBAdapter(clientPromise),
     providers: [ 
       GithubProvider({
-        clientId: process.env.GITHUB_ID,
-        clientSecret: process.env.GITHUB_SECRET,
+        clientId: process.env.GITHUB_CLIENT_ID,
+        clientSecret: process.env.GITHUB_CLIENT_SECRET,
       }),
       // ...add more providers here
     ],
